@@ -1,0 +1,112 @@
+{% extends "admin.html" %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title" style="margin-left: 30%;">Course Assign</h4>
+                    <div class="table-responsive">
+                        <form method="POST" action="/assign_course">
+                            <table id="mytable">
+                                <thead>
+                                    <tr>
+                                        <th>Teacher Name</th>
+                                        <th>Course</th>
+                                        <th>Program</th>
+                                        <th>Session</th>
+
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                   
+
+                                    <tr>
+
+                                        <td><div class="form-row align-items-center">
+                                            <div class="col-auto my-1">
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="teachers">
+                                                    <option selected="selected">Name..</option>
+                                                    {%for teachers in teacher %}
+                                              <option>{{teachers.name}}</option>
+                                                    {% endfor %}
+
+                                                </select>
+
+                                            </div>
+
+                                        </div></td>
+
+
+                                        <td>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto my-1">
+                                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="course">
+                                                        <option selected="selected">Choose...</option>
+                                                        {% for courses in course%}
+                                                        <option>{{ courses.Title}}</option>
+                                                        {% endfor %}
+
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+                                        </td>
+
+
+
+                                        <td>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto my-1">
+                                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="program">
+                                                        <option selected="selected">Choose...</option>
+                                                        {% for program in pr%}
+                                                        <option >{{program.program}}</option>
+                                                        {% endfor %}
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+                                        </td>
+
+
+                                        <td>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto my-1">
+                                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name ="session">
+                                                        <option selected="selected">Choose...</option>
+                                                        {% for session in se%}
+                                                        <option>{{session.session}}</option>
+                                                        {% endfor %}
+                                                    </select>
+
+                                                </div>
+
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    
+                                </tbody>
+
+                            </table>
+                            <button type="submit" class="btn btn-dark m-5" id="mybutton">Assign</button>
+                        </form>
+                      
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #/ container -->
+</div>
+
+{% endblock body %}

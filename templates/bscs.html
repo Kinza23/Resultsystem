@@ -1,0 +1,61 @@
+{% extends "admin.html" %}
+
+{% block body %}
+
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Result Table</h4>
+                        {# <div class="table-responsive"> #}
+                            <table class="table table-striped table-bordered zero-configuration" >
+                                <thead>
+                                    <tr>
+                                      <th>Roll Number</th>
+                                        <th>Student Name</th>
+                                        <th>Father Name</th>
+                                        <th> Program </th>
+                                        <th> Session </th>
+                                        <th> Shift </th>
+                                        <th> Gender </th>
+                                      
+                                    </tr>
+                                </thead>
+                                 <a href="/BSCS"><button type="submit" class="btn btn-dark m-1">BSCS</button ></a>
+                                 <a href="/MCS"><button type="submit" class="btn btn-dark m-1">MCS</button></a>
+                                 <a href="/BSIT"><button type="submit" class="btn btn-dark m-1">BSIT</button></a>
+                                <tbody>
+                                  
+                               
+
+                    
+                    
+                                {% for results in pr%}
+                                    <tr>
+                                        <td>{{ results.roll_number}}</td>
+                                        <td>{{ results.name}}</td>
+                                        <td>{{ results.father_name}}</td>
+                                        <td>{{ results.program}}</td>
+                                        <td>{{ results.session}}</td>
+                                        <td>{{ results.shift}}</td>
+                                        <td>{{ results.gender}}</td>
+                                     
+                                      
+                                       
+                                    </tr>
+                                 
+                                    {% endfor %}
+                                </tbody>
+                              
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+
+{% endblock body %}

@@ -1,0 +1,50 @@
+{% extends "admin.html" %}
+
+{% block body %}
+
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Result Table</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered zero-configuration">
+                                <thead>
+                                    <tr>
+                                        <th>Teacher Name</th>
+                                        <th>Course</th>
+                                        <th> Program </th>
+                                        <th> Session </th>
+                                        
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {%for vss in vs%}
+                                    <tr>
+                                        <td>{{vss.teacher_name}}</td>
+                                        <td>{{vss.course      }}</td>
+                                        <td>{{vss.program     }}</td>
+                                        <td>{{vss.session     }}</td>
+                                      
+                                       
+                                    </tr>
+                                    {%endfor%}
+                            
+                                       
+                                 
+                                   
+                                </tbody>
+                              
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+
+{% endblock body %}

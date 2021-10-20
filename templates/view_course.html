@@ -1,0 +1,51 @@
+{% extends "master_template.html"%}
+
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Your Courses</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered zero-configuration">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Course</th>
+                                    <th>Session</th>
+                                    <th>Program</th>
+                                    <th>Submit Result</th>
+                                  
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    
+                                    {% for course in ac%}
+                                    <td>{{course.course}}</td>
+                                    <td>{{course.session}}</td>
+                                    <td>{{course.program}}</td>
+                                    <td> <a href="/submit/{{course.program}}/{{course.session}}"> Submit</a> </td>
+                                   
+                                  
+                                   
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                          
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #/ container -->
+</div>
+
+{% endblock body %}

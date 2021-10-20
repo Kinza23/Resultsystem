@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Result - System  </title>
+    
+    <!-- Pignose Calender -->
+    <link href="{{url_for('static',filename='plugins/pg-calendar/css/pignose.calendar.min.css')}}" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="{{url_for('static',filename='plugins/chartist/css/chartist.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css')}}">
+    <!-- Custom Stylesheet -->
+    <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+
+</head>
+<script>
+var program = document.querySelector('#inlineFormCustomSelect');
+
+
+program.addEventListener('change', function() {
+  var value = inlineFormCustomSelect.value;
+  switch(value) {
+    
+    // assign a value to `part` depending on what option we have selected:
+    case 'BSCS':
+      part.value = 'HICOM1';
+      break;
+      
+    case 'BSIT':
+      part.value = 'HICOM2';
+      break;
+
+    case 'MCS':
+      part.value = 'HICOM3';
+      break;
+
+  
+    default:
+      part.value = '';
+  }
+})
+</script>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="/dashboard">
+                    <b class="logo-abbr"> <img src="images/logo.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <span class="brand-title"><strong style="color: red;">Admin Panel</strong>
+                        <img src="images/logo-text.png" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content clearfix">
+                
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <ul class="clearfix">
+                      
+                        
+                      <li><a href="/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li>
+                        <a class="has-arrow" href="/" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Add Teacher</span>
+                        </a>
+                       
+                    </li>
+                     <li>
+                        <a class="has-arrow" href="/add_student" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Add Student</span>
+                        </a>
+                       
+                    </li>
+                     <li>
+                        <a class="has-arrow" href="/assign_course" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Course Assign</span>
+                        </a>
+                       
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="/view_student" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">View Student</span>
+                        </a>
+                       
+                    </li>
+                     <li>
+                        <a class="has-arrow" href="/st_result" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Student Result</span>
+                        </a>
+                       
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="/va" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">View Assign</span>
+                        </a>
+                       
+                    </li>
+                                      
+                  
+                   
+                    
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+         
+                      {% block body %}
+
+{% endblock body %}
+                 
+
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="{{url_for('static',filename='plugins/common/common.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/custom.min.js')}}"></script>
+    <script src="{{url_for('static',filename='js/settings.js')}}"></script>
+    <script src="{{url_for('static',filename='js/gleek.js')}}"></script>
+    <script src="{{url_for('static',filename='js/styleSwitcher.js')}}"></script>
+
+    <!-- Chartjs -->
+    <script src="{{url_for('static',filename='plugins/chart.js/Chart.bundle.min.js')}}"></script>
+    <!-- Circle progress -->
+    <script src="{{url_for('static',filename='plugins/circle-progress/circle-progress.min.js')}}"></script>
+    <!-- Datamap -->
+    <script src="{{url_for('static',filename='plugins/d3v3/index.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/topojson/topojson.min.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/datamaps/datamaps.world.min.js')}}"></script>
+    <!-- Morrisjs -->
+    <script src="{{url_for('static',filename='plugins/raphael/raphael.min.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/morris/morris.min.js')}}"></script>
+    <!-- Pignose Calender -->
+    <script src="{{url_for('static',filename='plugins/moment/moment.min.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/pg-calendar/js/pignose.calendar.min.js')}}"></script>
+    <!-- ChartistJS -->
+    <script src="{{url_for('static',filename='plugins/chartist/js/chartist.min.js')}}"></script>
+    <script src="{{url_for('static',filename='plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js')}}"></script>
+
+
+
+    <script src="{{url_for('static',filename='js/dashboard/dashboard-1.js')}}"></script>
+
+</body>
+
+</html>
